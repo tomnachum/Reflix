@@ -1,0 +1,14 @@
+.user {
+  margin: 18px;
+  border-radius: 15px;
+  box-sizing: content-box;
+  width: 100%;
+  padding: 50px 30px;
+  color: black;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
