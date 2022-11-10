@@ -13,6 +13,15 @@ class App extends Component {
     this.state = data;
   }
 
+  changeMovieStatus = (movieId, isRented) => {
+    let updatedMovies = [...this.state.movies];
+    let movieToUpdateIdx = updatedMovies.findIndex(m => m.id === movieId);
+    updatedMovies[movieToUpdateIdx].isRented = isRented;
+    this.setState({
+      movies: updatedMovies,
+    });
+  };
+
   render() {
     return (
       <Router>
@@ -31,7 +40,12 @@ class App extends Component {
             <Route
               exact
               path="/catalog"
-              render={() => <Catalog movies={this.state.movies} />}
+              render={() => (
+                <Catalog
+                  movies={this.state.movies}
+                  changeMovieStatus={this.changeMovieStatus}
+                />
+              )}
             ></Route>
             <Route exact path="/movies/:id" component={Movie}></Route>
           </Switch>

@@ -6,7 +6,6 @@ class User extends Component {
   render() {
     return (
       <Link
-        exact
         to="/catalog"
         className="user"
         style={{ backgroundColor: this.props.color }}

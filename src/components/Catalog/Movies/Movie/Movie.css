@@ -1,5 +1,6 @@
 .movie {
   margin: 20px;
+  position: relative;
 }
 
 .box {
@@ -16,4 +17,28 @@
   height: inherit;
   width: inherit;
   object-fit: cover;
+}
+
+.btn-container {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.btn {
+  text-decoration: none;
+  border: none;
+  padding: 5px 5px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 100%;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+
+.btn:active {
+  transform: scale(0.8);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 1);
 }
