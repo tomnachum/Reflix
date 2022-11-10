@@ -6,3 +6,7 @@
   padding: 50px 30px;
   color: black;
 }
+
+.user:hover {
+  box-shadow: 0 0 40px -10px wheat;
+}

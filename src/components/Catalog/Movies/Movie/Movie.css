@@ -1,14 +1,18 @@
 .movie {
   margin: 20px;
-  position: relative;
 }
 
 .box {
+  position: relative;
   border-radius: 10px;
   width: 25vh;
   height: 25vh;
   overflow: hidden;
   display: flex;
+}
+
+.box:hover {
+  box-shadow: 0 0 40px -10px wheat;
 }
 
 .box img {
@@ -21,11 +25,18 @@
 
 .btn-container {
   position: absolute;
-  right: 14px;
-  top: 12px;
+  right: 5px;
+  top: 5px;
+}
+
+.btn:hover {
+  height: 24px;
+  width: 24px;
 }
 
 .btn {
+  height: 20px;
+  width: 20px;
   text-decoration: none;
   border: none;
   padding: 5px 5px;
