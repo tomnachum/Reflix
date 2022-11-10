@@ -1,0 +1,13 @@
+.home {
+  margin-top: 100px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.users {
+  margin: 50px;
+}

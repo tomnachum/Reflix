@@ -15,7 +15,10 @@ class NavBar extends Component {
           </NavLink>
         </div>
         <div className="image-container">
-          <img src="https://portalrefil.com.br/wp-content/uploads/2021/07/logo-reflix-quadrado.png" />
+          <img
+            src="https://portalrefil.com.br/wp-content/uploads/2021/07/logo-reflix-quadrado.png"
+            alt=""
+          />
         </div>
       </div>
     );
