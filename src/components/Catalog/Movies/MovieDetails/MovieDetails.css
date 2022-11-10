@@ -1,0 +1,15 @@
+.movie-img {
+  height: 500px;
+}
+
+.movie-details {
+  display: grid;
+}
+
+.description {
+  margin: 60px;
+}
+
+.title {
+  margin-bottom: 60px;
+}

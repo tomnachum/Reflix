@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Movie.css";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 class Movie extends Component {
   changeStatus = () => {
@@ -20,9 +21,11 @@ class Movie extends Component {
             <FaPlusCircle className="btn" />
           )}
         </div>
-        <div className="box">
-          <img src={this.props.movie.img} alt="" />
-        </div>
+        <Link to={`/movies/${this.props.movie.id}`}>
+          <div className="box">
+            <img src={this.props.movie.img} alt="" />
+          </div>
+        </Link>
       </div>
     );
   }

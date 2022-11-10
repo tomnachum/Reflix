@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
-import Movie from "./components/Catalog/Movies/Movie/Movie";
 import React, { Component } from "react";
 import { data } from "./AppData";
+import MovieDetails from "./components/Catalog/Movies/MovieDetails/MovieDetails";
 
 class App extends Component {
   constructor() {
@@ -47,7 +47,15 @@ class App extends Component {
                 />
               )}
             ></Route>
-            <Route exact path="/movies/:id" component={Movie}></Route>
+            <Route
+              exact
+              path="/movies/:id"
+              render={({ match }) => (
+                <MovieDetails
+                  movie={this.state.movies.find(m => m.id === +match.params.id)}
+                />
+              )}
+            ></Route>
           </Switch>
         </div>
       </Router>
