@@ -21,3 +21,7 @@ a {
 img {
   height: 80px;
 }
+
+.active {
+  color: red;
+}

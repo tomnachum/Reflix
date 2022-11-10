@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./ChooseUser.css";
+import "./Home.css";
 
-class ChooseUser extends Component {
+class Home extends Component {
   render() {
     return <div>ChooseUser</div>;
   }
 }
 
-export default ChooseUser;
+export default Home;
