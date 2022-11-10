@@ -6,16 +6,20 @@ class Movies extends Component {
   render() {
     return (
       <div className="movies">
-        <h2 className="title">{this.props.title}:</h2>
-        <div className="movies-container">
-          {this.props.movies.map(m => (
-            <Movie
-              key={m.id}
-              movie={m}
-              changeMovieStatus={this.props.changeMovieStatus}
-            />
-          ))}
-        </div>
+        {this.props.movies.length ? (
+          <div>
+            <h2 className="title">{this.props.title}:</h2>
+            <div className="movies-container">
+              {this.props.movies.map(m => (
+                <Movie
+                  key={m.id}
+                  movie={m}
+                  changeMovieStatus={this.props.changeMovieStatus}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }

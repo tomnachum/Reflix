@@ -6,13 +6,13 @@ class MovieDetails extends Component {
     const movie = this.props.movie;
     return (
       <div className="movie-details">
-        <h1 className="title center">
+        <h1 className="movie-title center">
           {movie.title} ({movie.year})
         </h1>
         <div className="center">
           <img src={movie.img} alt="" className="movie-img"></img>
         </div>
-        <p className="description">{movie.descrShort}</p>
+        <p className="movie-description">{movie.descrShort}</p>
       </div>
     );
   }
