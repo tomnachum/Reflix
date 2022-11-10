@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
-import Movie from "./components/Catalog/Movie/Movie";
+import Movie from "./components/Catalog/Movies/Movie/Movie";
 import React, { Component } from "react";
 import { data } from "./AppData";
 
@@ -28,7 +28,11 @@ class App extends Component {
               path="/"
               render={() => <Home users={this.state.users} />}
             ></Route>
-            <Route exact path="/catalog" component={Catalog}></Route>
+            <Route
+              exact
+              path="/catalog"
+              render={() => <Catalog movies={this.state.movies} />}
+            ></Route>
             <Route exact path="/movies/:id" component={Movie}></Route>
           </Switch>
         </div>
