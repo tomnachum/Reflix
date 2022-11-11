@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Budget from "./Budget/Budget";
 import "./Catalog.css";
 import Movies from "./Movies/Movies";
+import Search from "./Search/Search";
 
 class Catalog extends Component {
   constructor() {
@@ -9,15 +11,14 @@ class Catalog extends Component {
       input: "",
     };
   }
+  handleInputChange = updatedInput => {
+    this.setState({
+      input: updatedInput,
+    });
+  };
 
   getRentedMovies = () => {
     return this.props.movies.filter(m => m.isRented);
-  };
-
-  handleInputChange = e => {
-    this.setState({
-      input: e.target.value,
-    });
   };
 
   getFilteredMovies = () => {
@@ -29,12 +30,7 @@ class Catalog extends Component {
   render() {
     return (
       <div className="catalog">
-        <input
-          placeholder="Search"
-          value={this.state.input}
-          onChange={this.handleInputChange}
-          className="search-input"
-        />
+        <Search input={this.state.input} onChange={this.handleInputChange} />
         <Movies
           title="Rented"
           movies={this.getRentedMovies()}
