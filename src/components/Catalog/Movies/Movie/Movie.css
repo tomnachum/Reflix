@@ -1,14 +1,20 @@
 .movie {
-  margin: 20px;
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .box {
   position: relative;
   border-radius: 10px;
-  width: 25vh;
-  height: 25vh;
+  width: 40vh;
+  height: 40vh;
   overflow: hidden;
   display: flex;
+}
+
+.movie a {
+  margin: 0;
 }
 
 .box:hover {
