@@ -7,6 +7,8 @@ import React, { Component } from "react";
 import { data } from "./AppData";
 import MovieDetails from "./components/Catalog/Movies/MovieDetails/MovieDetails";
 
+const MOVIE_PRICE = 3;
+
 class App extends Component {
   constructor() {
     super();
@@ -14,11 +16,17 @@ class App extends Component {
   }
 
   changeMovieStatus = (movieId, isRented) => {
+    if (isRented && this.state.budget - MOVIE_PRICE < 0) {
+      alert("Renting is not allowed! Your budget is not enough.");
+      return;
+    }
     let updatedMovies = [...this.state.movies];
     let movieToUpdateIdx = updatedMovies.findIndex(m => m.id === movieId);
     updatedMovies[movieToUpdateIdx].isRented = isRented;
+    let factor = isRented ? -1 : 1;
     this.setState({
       movies: updatedMovies,
+      budget: this.state.budget + MOVIE_PRICE * factor,
     });
   };
 
@@ -44,6 +52,7 @@ class App extends Component {
                 <Catalog
                   movies={this.state.movies}
                   changeMovieStatus={this.changeMovieStatus}
+                  budget={this.state.budget}
                 />
               )}
             ></Route>

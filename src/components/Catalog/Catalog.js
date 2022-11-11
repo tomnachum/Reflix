@@ -30,7 +30,18 @@ class Catalog extends Component {
   render() {
     return (
       <div className="catalog">
-        <Search input={this.state.input} onChange={this.handleInputChange} />
+        <div className="menu">
+          <div className="search">
+            <Search
+              input={this.state.input}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div className="budget">
+            <Budget budget={this.props.budget} />
+          </div>
+        </div>
+        <br />
         <Movies
           title="Rented"
           movies={this.getRentedMovies()}
