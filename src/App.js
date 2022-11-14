@@ -6,8 +6,7 @@ import Catalog from "./components/Catalog/Catalog";
 import React, { Component } from "react";
 import { data } from "./AppData";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
-
-const MOVIE_PRICE = 3;
+import { BUDGET, ERROR } from "./Constants";
 
 class App extends Component {
   constructor() {
@@ -16,17 +15,17 @@ class App extends Component {
   }
 
   changeMovieStatus = (movieId, isRented) => {
-    if (isRented && this.state.budget - MOVIE_PRICE < 0) {
-      alert("Renting is not allowed! Your budget is not enough.");
+    if (isRented && this.state.budget - BUDGET.MOVIE_PRICE < 0) {
+      alert(ERROR.LOW_BUDGET);
       return;
     }
     let updatedMovies = [...this.state.movies];
     let movieToUpdateIdx = updatedMovies.findIndex(m => m.id === movieId);
     updatedMovies[movieToUpdateIdx].isRented = isRented;
-    let factor = isRented ? -1 : 1;
+    let factor = isRented ? BUDGET.DECREASE : BUDGET.INCREASE;
     this.setState({
       movies: updatedMovies,
-      budget: this.state.budget + MOVIE_PRICE * factor,
+      budget: this.state.budget + BUDGET.MOVIE_PRICE * factor,
     });
   };
 

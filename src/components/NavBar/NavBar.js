@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
+import { LOGO } from "../../Constants";
 
 class NavBar extends Component {
   render() {
@@ -15,10 +16,7 @@ class NavBar extends Component {
           </NavLink>
         </div>
         <div className="image-container">
-          <img
-            src="https://portalrefil.com.br/wp-content/uploads/2021/07/logo-reflix-quadrado.png"
-            alt=""
-          />
+          <img src={LOGO.URL} alt="" />
         </div>
       </div>
     );
