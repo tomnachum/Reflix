@@ -2,8 +2,18 @@ import React, { Component } from "react";
 import "./Search.css";
 
 class Search extends Component {
+  constructor() {
+    super();
+    this.state = {
+      input: "",
+    };
+  }
+
   handleInputChange = e => {
-    this.props.onChange(e.target.value);
+    this.setState({
+      input: e.target.value,
+    });
+    this.props.filterMovies(e.target.value);
   };
 
   render() {
@@ -11,7 +21,7 @@ class Search extends Component {
       <div>
         <input
           placeholder="Search"
-          value={this.props.input}
+          value={this.state.input}
           onChange={this.handleInputChange}
           className="search-input"
         />

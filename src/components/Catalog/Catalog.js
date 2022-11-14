@@ -5,26 +5,25 @@ import Movies from "./Movies/Movies";
 import Search from "./Search/Search";
 
 class Catalog extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      input: "",
+      filteredMovies: this.props.movies,
     };
   }
-  handleInputChange = updatedInput => {
-    this.setState({
-      input: updatedInput,
-    });
-  };
 
   getRentedMovies = () => {
     return this.props.movies.filter(m => m.isRented);
   };
 
-  getFilteredMovies = () => {
+  getFilteredMovies = input => {
     const movies = this.props.movies;
-    const input = this.state.input.toLowerCase();
-    return movies.filter(m => m.title.toLowerCase().includes(input));
+    const inputLower = input.toLowerCase();
+    this.setState({
+      filteredMovies: movies.filter(m =>
+        m.title.toLowerCase().includes(inputLower)
+      ),
+    });
   };
 
   render() {
@@ -32,10 +31,7 @@ class Catalog extends Component {
       <div className="catalog">
         <div className="menu">
           <div className="search">
-            <Search
-              input={this.state.input}
-              onChange={this.handleInputChange}
-            />
+            <Search filterMovies={this.getFilteredMovies} />
           </div>
           <div className="budget">
             <Budget budget={this.props.budget} />
@@ -49,7 +45,7 @@ class Catalog extends Component {
         />
         <Movies
           title="Catalog"
-          movies={this.getFilteredMovies()}
+          movies={this.state.filteredMovies}
           changeMovieStatus={this.props.changeMovieStatus}
         />
       </div>
