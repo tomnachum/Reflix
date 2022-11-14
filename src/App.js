@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
 import React, { Component } from "react";
 import { data } from "./AppData";
-import MovieDetails from "./components/Catalog/Movies/MovieDetails/MovieDetails";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
 
 const MOVIE_PRICE = 3;
 
