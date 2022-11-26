@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A front-end project with React. This is a movie rental app, which allows a user to browse a catalog of movies, and select some to rent, so long as the user has the budget for it.
+A front-end project written in React. This is a movie rental app, which allows a user to browse a catalog of movies, and select some to rent, so long as the user has the budget for it.
 
 <p float="left">
     <img src="public/images/home.png" width="600" />
